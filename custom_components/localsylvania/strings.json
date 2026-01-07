@@ -39,8 +39,8 @@
     "options": {
         "step": {
             "init": {
-                "title": "LocalSylvania Configuration",
-                "description": "Please select the desired actionSSSS.",
+                "title": "Local Sylvania Configuration",
+                "description": "Please select the desired action.",
                 "data": {
                     "add_device": "Add a new device",
                     "edit_device": "Edit a device",
@@ -135,5 +135,5 @@
             }
         }
     },
-    "title": "LocalSylvania"
+    "title": "Local Sylvania"
 }

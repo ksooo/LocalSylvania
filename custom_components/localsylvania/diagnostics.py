@@ -1,4 +1,4 @@
-"""Diagnostics support for LocalSylvania."""
+"""Diagnostics support for Local Sylvania."""
 from __future__ import annotations
 
 import copy

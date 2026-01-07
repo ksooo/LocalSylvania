@@ -1,4 +1,4 @@
-"""Config flow for LocalSylvania integration."""
+"""Config flow for Local Sylvania integration."""
 import errno
 import logging
 import time
@@ -337,7 +337,7 @@ async def attempt_cloud_connection(hass, user_input):
 
 
 class LocaltuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for LocalSylvania integration."""
+    """Handle a config flow for Local Sylvania integration."""
 
     VERSION = ENTRIES_VERSION
     CONNECTION_CLASS = config_entries.CONN_CLASS_LOCAL_POLL
@@ -399,10 +399,10 @@ class LocaltuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
 
 class LocalTuyaOptionsFlowHandler(config_entries.OptionsFlow):
-    """Handle options flow for LocalSylvania integration."""
+    """Handle options flow for Local Sylvania integration."""
 
     def __init__(self, config_entry):
-        """Initialize localtuya options flow."""
+        """Initialize localsylvania options flow."""
         # config_entry is provided by parent class as read-only property
         # self.dps_strings = config_entry.data.get(CONF_DPS_STRINGS, gen_dps_strings())
         # self.entities = config_entry.data[CONF_ENTITIES]

@@ -1,0 +1,14 @@
+{
+  "domain": "localsylvania",
+  "name": "Local Sylvania",
+  "codeowners": [
+    "@clutchthrower", "@ksooo"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/ksooo/localsylvania/",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/ksooo/localsylvania/issues",
+  "requirements": [],
+  "version": "2026.1.0"
+}
