@@ -402,7 +402,7 @@ class LocalTuyaOptionsFlowHandler(config_entries.OptionsFlow):
     """Handle options flow for LocalSylvania integration."""
 
     def __init__(self, config_entry):
-        """Initialize localtuya options flow."""
+        """Initialize localsylvania options flow."""
         # config_entry is provided by parent class as read-only property
         # self.dps_strings = config_entry.data.get(CONF_DPS_STRINGS, gen_dps_strings())
         # self.entities = config_entry.data[CONF_ENTITIES]
