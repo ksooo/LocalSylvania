@@ -1,6 +1,6 @@
-"""Constants for localtuya integration."""
+"""Constants for localsylvania integration."""
 
-DOMAIN = "localtuya"
+DOMAIN = "localsylvania"
 
 DATA_DISCOVERY = "discovery"
 DATA_CLOUD = "cloud_data"

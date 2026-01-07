@@ -191,7 +191,7 @@
     "services": {
         "reload": {
             "name": "Reload",
-            "description": "Reload localtuya and reconnect to all devices."
+            "description": "Reload localsylvania and reconnect to all devices."
         },
         "set_dp": {
             "name": "Set datapoint",
