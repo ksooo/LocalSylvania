@@ -1,14 +1,14 @@
 {
-  "domain": "localtuya",
+  "domain": "localsylvania",
   "name": "LocalSylvania",
   "codeowners": [
     "@clutchthrower"
   ],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/clutchthrower/localtuya/",
+  "documentation": "https://github.com/clutchthrower/localsylvania/",
   "iot_class": "local_push",
-  "issue_tracker": "https://github.com/clutchthrower/localtuya/issues",
+  "issue_tracker": "https://github.com/clutchthrower/localsylvania/issues",
   "requirements": [],
   "version": "5.2.3"
 }

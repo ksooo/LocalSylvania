@@ -1,4 +1,4 @@
-"""Constants for localtuya integration."""
+"""Constants for localsylvania integration."""
 
 DOMAIN = "localtuya"
 
