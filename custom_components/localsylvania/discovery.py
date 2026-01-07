@@ -16,18 +16,37 @@ _LOGGER = logging.getLogger(__name__)
 
 UDP_KEY = md5(b"yGAdlopoPVldABfn").digest()
 
+PREFIX_55AA_BIN = b"\x00\x00U\xaa"
+PREFIX_6699_BIN = b"\x00\x00\x66\x99"
+UDP_COMMAND = b"\x00\x00\x00\x00"
+
 DEFAULT_TIMEOUT = 6.0
+
+
+def decrypt(msg, key):
+    def _unpad(data):
+        return data[: -ord(data[len(data) - 1 :])]
+
+    cipher = Cipher(algorithms.AES(key), modes.ECB(), default_backend())
+    decryptor = cipher.decryptor()
+    return _unpad(decryptor.update(msg) + decryptor.finalize()).decode()
 
 
 def decrypt_udp(message):
     """Decrypt encrypted UDP broadcasts."""
-
-    def _unpad(data):
-        return data[: -ord(data[len(data) - 1 :])]
-
-    cipher = Cipher(algorithms.AES(UDP_KEY), modes.ECB(), default_backend())
-    decryptor = cipher.decryptor()
-    return _unpad(decryptor.update(message) + decryptor.finalize()).decode()
+    if message[:4] == PREFIX_55AA_BIN:
+        payload = message[20:-8]
+        if message[8:12] == UDP_COMMAND:
+            return payload
+        return decrypt(payload, UDP_KEY)
+    if message[:4] == PREFIX_6699_BIN:
+        unpacked = parser.unpack_message(message, hmac_key=UDP_KEY, no_retcode=None)
+        payload = unpacked.payload.decode()
+        # app sometimes has extra bytes at the end
+        while payload[-1] == chr(0):
+            payload = payload[:-1]
+        return payload
+    return decrypt(message, UDP_KEY)
 
 
 class TuyaDiscovery(asyncio.DatagramProtocol):
